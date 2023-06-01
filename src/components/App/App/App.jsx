@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import ContactForm from "../ContactForm/ContactForm";
 import Filter from "../Filter/Filter";
@@ -45,12 +44,14 @@ export class App extends Component {
     }
   };
   
-componentDidMount() {
-  const contacts = localStorage.getItem('contacts');
-  const parsedContacts =JSON.parse(contacts);
+  componentDidMount() {
+    const contacts = localStorage.getItem('contacts');
+    const parsedContacts = JSON.parse(contacts);
 
-  this.setState({ contacts: parsedContacts });
-}
+    if (parsedContacts) {
+      this.setState({ contacts: parsedContacts });
+    }
+  }
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.contacts !== prevState.contacts) {
@@ -74,6 +75,5 @@ componentDidMount() {
     );
   }
 }
-
 
 export default App;
