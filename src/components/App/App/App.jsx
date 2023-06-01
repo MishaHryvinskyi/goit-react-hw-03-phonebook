@@ -35,16 +35,21 @@ export class App extends Component {
   getFilteredContacts = () => {
     const { contacts, filter } = this.state;
     const normalizedFilter = filter.toLowerCase();
-    return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalizedFilter)
-    );
+  
+    if (filter) {
+      return contacts.filter(contact =>
+        contact.name.toLowerCase().includes(normalizedFilter)
+      );
+    } else {
+      return contacts;
+    }
   };
-
+  
 componentDidMount() {
   const contacts = localStorage.getItem('contacts');
   const parsedContacts =JSON.parse(contacts);
 
-  // this.setState({ contacts: parsedContacts })
+  this.setState({ contacts: parsedContacts });
 }
 
   componentDidUpdate(prevProps, prevState) {
