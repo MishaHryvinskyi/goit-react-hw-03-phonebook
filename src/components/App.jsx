@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import ContactForm from "../ContactForm/ContactForm";
-import Filter from "../Filter/Filter";
-import ContactList from "../ContactList/ContactList";
+import ContactForm from "./ContactForm/ContactForm";
+import Filter from "./Filter/Filter";
+import ContactList from "./ContactList/ContactList";
 import { MainContainer, PhonbookTitle, ContactsTitle } from './App.styled';
 
 export class App extends Component {

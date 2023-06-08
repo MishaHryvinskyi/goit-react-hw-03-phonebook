@@ -16,7 +16,7 @@ class ContactList extends Component {
           <ListItem key={contact.id}>
             {contact.name}: {contact.number}
             <BtnDelite onClick={() => this.handleDeleteContact(contact.id)}>
-              Видалити
+            Remove
             </BtnDelite>
           </ListItem>
         ))}
